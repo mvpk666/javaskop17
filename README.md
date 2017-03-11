@@ -36,6 +36,9 @@ This will generate docker login command that you need then to run
 Push image to ECR  
 ```docker push 740192421584.dkr.ecr.eu-west-1.amazonaws.com/jhipsta-app:latest```
 
+Initialize AWS ElasticBeanstalk application  
+```eb init```  
+
 Deploy the app (Run it from directory with Dockerrun.aws.json)  
 ```eb deploy```
 

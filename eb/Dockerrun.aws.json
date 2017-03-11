@@ -43,12 +43,12 @@
     },
     {
       "name": "jhipsta-app",
-      "image": "740192421584.dkr.ecr.eu-west-1.amazonaws.com/jhipsta-app:<TAG>",
+      "image": "740192421584.dkr.ecr.eu-west-1.amazonaws.com/jhipsta-app:latest",
       "essential": true,
       "memoryReservation": 300,
       "portMappings": [
         {
-          "hostPort": 8080,
+          "hostPort": 80,
           "containerPort": 8080
         }
       ],
@@ -56,6 +56,10 @@
         "jhipsta-db"
       ],
       "environment": [
+        {
+          "name": "SPRING_PROFILES_ACTIVE",
+          "value": "prod"
+        },
         {
           "name": "SPRING_DATASOURCE_URL",
           "value": "jdbc:postgresql://jhipsta-db/jhipsta"
