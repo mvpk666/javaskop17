@@ -27,20 +27,21 @@ Stop docker-compose
 ```type Ctrl+C```
 
 Tag build image to push to AWS repo URI  
-```docker tag jhipsta-app:latest 740192421584.dkr.ecr.eu-west-1.amazonaws.com/jhipsta-app:latest```
+```docker tag jhipsta-app:latest YOUR_AWS_ID.dkr.ecr.YOUR_AWS_REGION.amazonaws.com/jhipsta-app:latest```
 
 Get login command for AWS ECR  
 ```aws ecr get-login --region eu-west-1```  
 This will generate docker login command that you need then to run
 
 Push image to ECR  
-```docker push 740192421584.dkr.ecr.eu-west-1.amazonaws.com/jhipsta-app:latest```
+```docker push YOUR_AWS_ID.dkr.ecr.YOUR_AWS_REGION.amazonaws.com/jhipsta-app:latest```
 
 Initialize AWS ElasticBeanstalk application  
 ```eb init```  
 
-Deploy the app (Run it from directory with Dockerrun.aws.json)  
+Update Dockerrun.aws.json and deploy the app.  
+Run this from directory with Dockerrun.aws.json  
 ```eb deploy```
 
-Run application locally with EB CLI
+Run application locally with EB CLI  
 ```eb local run```
